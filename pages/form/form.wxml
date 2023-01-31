@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="stats" style="">
+    <view>单选题：5  多选题：3</view>
+    <view>总分：45</view>
+  </view>
+  <view class="list">
+    <view wx:for="{{questions}}" wx:key="id" class="question">
+      <view style="width: 30px; text-align: center; margin-right: 8px;">{{index + 1}}.</view>
+      <view style="flex: 1; display: flex;">
+        <block wx:for="{{item.bubbles}}" wx:for-item="bubble">
+          <view class="bubble {{ bubble == 1 ? 'picked' : ''}}"></view>
+        </block>
+        
+      </view>
+      <view style="">{{item.score}} <text style="font-size: 12px;color: gray">分</text></view>
+    </view>
+  </view>
+</view>
+
+<view class="toolbar">
+  <view>
+    <button size="mini" class="btn">down</button>
+  </view>
+  <view style="display: flex;">
+    <button size="mini" class="btn">settings</button>
+    <button bindtap="onTapAdd" class="btn" size="mini">+</button>
+  </view>
+
+</view>

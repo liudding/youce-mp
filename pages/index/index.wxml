@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="quizzes">
+    <view wx:for="{{quizzes}}" wx:key="id" bindtap="onTapQuiz" class="quiz">
+      <view class="infos">
+        <view class="quiz-title">{{item.title}}</view>
+        <view class="quiz-date">{{item.date}}</view>
+      </view>
+
+      <view class="buttons">
+        <view>Scan</view>
+        <view>M</view>
+      </view>
+    </view>
+  </view>
+</view>

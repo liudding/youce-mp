@@ -1,0 +1,44 @@
+page {
+  background-color: #efefef;
+}
+
+.header {
+  height: 90px;
+  width: 100vw;
+  background-color: white;
+}
+
+.list {
+  width: 100vw;
+  margin-top: 20px;
+}
+.sheet {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.float-scan {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: rgb(253, 60, 26);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text-button {
+  font-size: 14px;
+  color: blue;
+}

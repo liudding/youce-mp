@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header" style="display: flex;flex-direction: column; justify-content: space-between;">
+    <view style="display: flex; justify-content: space-between;">
+      <view style="font-size: 12px">共 {{stats.questionCount}} 题</view>
+    <view style="font-size: 12px;">平均分：100 最高分：120 最低：10</view>
+    </view>
+
+    <view style="display: flex; ">
+      <view bindtap="onTapForm" class="text-button">设置题目</view>
+      <view bindtap="onTapReport" class="text-button">查看报告</view>
+    </view>
+  </view>
+
+  <view class="list">
+    <mp-cells ext-class="my-cells" title="">
+      <block wx:for="{{sheets}}" wx:key="id">
+        <mp-cell  footer="{{item.score}}" link>
+          <view style="font-size: 15px;">{{item.name}} ({{item.num}})</view>
+        </mp-cell>
+      </block>
+    </mp-cells>
+  </view>
+</view>
+
+<view class="float-scan">
+Scan
+</view>
