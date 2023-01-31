@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/scanner/index",
     "pages/me/index",
     "pages/quiz/quiz",
     "pages/report/report",

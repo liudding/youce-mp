@@ -2,7 +2,7 @@
 // 获取应用实例
 const app = getApp()
 
-import { clone} from '../../utils/util'
+const {clone } = require('../../utils/util')
 
 Page({
   data: {
@@ -40,6 +40,11 @@ Page({
   onTapQuiz() {
     wx.navigateTo({
       url: '/pages/quiz/quiz'
+    })
+  },
+  onTapScan() {
+    wx.navigateTo({
+      url: '/pages/scanner/index',
     })
   },
   onTapMore(e) {

@@ -8,7 +8,7 @@
       </view>
 
       <view class="buttons">
-        <view class="btn">Scan</view>
+        <view catchtap="onTapScan" class="btn">Scan</view>
         <view catchtap="onTapMore" data-index="{{index}}" class="btn">M</view>
       </view>
     </view>

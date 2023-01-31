@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <camera device-position="back" resolution="low" frame-size="small" flash="off" binderror="error" class="camera"></camera>
+<canvas type="2d" id="myCanvas" class="canvas"></canvas>
+</view>
