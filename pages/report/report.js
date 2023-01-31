@@ -5,7 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    stats: [{
+      question: {
+        label: "1.",
+        score: 2
+      },
+      answers: [{ label: "A", count: 20}, { label: "A", count: 20}, { label: "A", count: 20}, { label: "A", count: 20}]
+    } , {
+      question: {
+        label: "1.",
+        score: 2
+      },
+      answers: [{ label: "A", count: 20}, { label: "A", count: 20}, { label: "A", count: 20}, { label: "A", count: 20}]
+    }]
   },
 
   /**
@@ -14,52 +26,13 @@ Page({
   onLoad(options) {
 
   },
+  onTapAnswer(e) {
+    const qi = e.currentTarget.dataset.questionindex
+    const ai = e.currentTarget.dataset.answerindex
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+    const question = this.data.stats[qi]
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage() {
 
   }

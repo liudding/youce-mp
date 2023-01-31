@@ -1,1 +1,22 @@
-/* pages/report/report.wxss */
+page {
+  background-color: #efefef;
+}
+
+.questions {
+  width: 100%;
+}
+
+.question {
+  /* width: 100%; */
+  padding: 8px 8px;
+  background-color: white;
+  margin-bottom: 4px;
+}
+
+.answer {
+  font-size: 15px;
+  padding: 0px 8px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-right: 8px;
+}

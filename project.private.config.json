@@ -3,5 +3,6 @@
   "projectname": "bubble-sheet",
   "setting": {
     "compileHotReLoad": true
-  }
+  },
+  "libVersion": "2.16.0"
 }

@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="list">
+    <view wx:for="{{questions}}" wx:key="id" class="question">
+      <view style="width: 40px; text-align: center; margin-right: 8px;">{{index + 1}}.</view>
+      <bubbles></bubbles>
+      <!-- <view style="flex: 1; display: flex;">
+        <block wx:for="{{item.bubbles}}" wx:for-item="bubble">
+          <view class="bubble {{ bubble == 1 ? 'picked' : ''}}"></view>
+        </block>
+        
+      </view> -->
+      <view style="">{{item.score}} <text style="font-size: 12px;color: gray">分</text></view>
+    </view>
+  </view>
+</view>

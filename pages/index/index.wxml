@@ -8,9 +8,42 @@
       </view>
 
       <view class="buttons">
-        <view>Scan</view>
-        <view>M</view>
+        <view class="btn">Scan</view>
+        <view catchtap="onTapMore" data-index="{{index}}" class="btn">M</view>
       </view>
     </view>
   </view>
 </view>
+
+
+<view bindtap="onTappAdd" class="fab add">
+  add
+</view>
+
+<mp-actionSheet bindactiontap="onActionTapped" show="{{showActionsheet}}" actions="{{actions}}">
+</mp-actionSheet>
+
+<page-container 
+  show="{{showEditPopup}}"
+  round="{{round}}"
+  overlay
+  position="bottom"
+  close-on-slide-down
+>
+  <view class="edit-popup">
+    <view style="padding: 8px 0; margin-bottom: 8px; position: relative;">
+      <view style="margin: 0 auto;">添加测验</view>
+      <!-- <view style="position: absolute; right: 0; top: 0;">x</view> -->
+    </view>
+
+    <form catchsubmit="onFormSubmit">
+      <view style="background-color: #efefef; padding: 2px 4px; box-sizing: border-box; border-radius: 4px; width: 250px;">
+        <input name="title" value="{{form.title}}" focus="{{focusForm}}" cursor-spacing="80" confirm-hold style="line-height: 20px; font-size: 20px; height: 40px;" class="weui-input"  />
+      </view>
+
+      <view class="btn-area">
+        <button style="margin: 40rpx 0; width: 250px;" type="primary" formType="submit">确定</button>
+      </view>
+    </form>
+  </view>
+</page-container>

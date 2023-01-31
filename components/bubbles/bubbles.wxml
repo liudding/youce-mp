@@ -1,0 +1,5 @@
+<view class="bubbles">
+  <block wx:for="{{bubbles}}">
+    <view  class="bubble {{ ([1,2,3].indexOf(index) < 0) ? 'picked' : ''}}"></view>
+  </block>
+</view>

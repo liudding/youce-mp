@@ -1,2 +1,18 @@
-<!--pages/report/report.wxml-->
-<text>pages/report/report.wxml</text>
+<view class="container">
+  <view class="questions">
+    <view wx:for="{{stats}}" class="question">
+      <view style="display: flex; justify-content: space-between; align-items: center;">
+        <view style="font-weight: 700; font-size: 15px;">{{item.question.label}} 题 ({{item.question.score}}分)</view>
+        <view>
+          <view style="font-size: 14px;">正确率：45%</view>
+        </view>
+      </view>
+
+      <view style="display: flex; margin-top: 8px;">
+        <block wx:for="{{item.answers}}" wx:for-item="answer" wx:for-index="idx">
+          <view bindtap="onTapAnswer" data-questionIndex="{{index}}" data-answerIndex="{{idx}}" class="answer">{{answer.label}} {{answer.count}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

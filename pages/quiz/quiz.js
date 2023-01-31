@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sheets: [{
+    answers: [{
       name: 'jack',
       num: "12345",
       score: 122
@@ -31,6 +31,13 @@ Page({
   onTapForm() {
     wx.navigateTo({
       url: '/pages/form/form',
+    })
+  },
+
+  onTapAnswer(e) {
+    const answer = this.data.answers[e.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: '/pages/answer/answer?id=' + answer.id,
     })
   },
 

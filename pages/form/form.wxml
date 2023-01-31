@@ -1,19 +1,21 @@
 <view class="container">
-  <view class="stats" style="">
-    <view>单选题：5  多选题：3</view>
+  <view class="stats">
+    <view>单选题：5 多选题：3</view>
     <view>总分：45</view>
   </view>
   <view class="list">
-    <view wx:for="{{questions}}" wx:key="id" class="question">
-      <view style="width: 30px; text-align: center; margin-right: 8px;">{{index + 1}}.</view>
-      <view style="flex: 1; display: flex;">
-        <block wx:for="{{item.bubbles}}" wx:for-item="bubble">
-          <view class="bubble {{ bubble == 1 ? 'picked' : ''}}"></view>
-        </block>
-        
+    <block wx:for="{{questions}}" wx:key="id">
+      <view bindlongpress="onLongPressQuestion" data-index="{{index}}" class="question">
+        <view bindtap="onTapLabel" data-index="{{index}}" class="label">{{item.label}}.</view>
+        <view class="flex flex-1">
+          <block wx:for="{{item.bubbles}}" wx:for-item="bubble">
+            <view class="bubble {{ bubble == 1 ? 'picked' : ''}}"></view>
+          </block>
+        </view>
+        <view catchtap="onTapScore" data-index="{{index}}">{{item.score}} <text style="font-size: 12px;color: gray">分</text></view>
       </view>
-      <view style="">{{item.score}} <text style="font-size: 12px;color: gray">分</text></view>
-    </view>
+    </block>
+
   </view>
 </view>
 
@@ -21,9 +23,51 @@
   <view>
     <button size="mini" class="btn">down</button>
   </view>
-  <view style="display: flex;">
+  <view class="flex">
     <button size="mini" class="btn">settings</button>
     <button bindtap="onTapAdd" class="btn" size="mini">+</button>
   </view>
 
 </view>
+
+<page-container show="{{true}}" round="{{round}}" overlay position="bottom" close-on-slide-down>
+  <view class="edit-popup">
+    <view style="padding: 8px 0; margin-bottom: 8px; position: relative;">
+      <view style="margin: 0 auto;">编辑题目</view>
+      <!-- <view style="position: absolute; right: 0; top: 0;">x</view> -->
+    </view>
+
+    <mp-form>
+      <form catchsubmit="onFormSubmit">
+        <mp-cells title="" footer="">
+          <label>
+            <mp-cell prop="label" title="题号" ext-class="">
+              <input name="label" value="{{form.label}}" maxlength="6" class="weui-input" placeholder="" />
+            </mp-cell>
+          </label>
+          <label>
+            <mp-cell title="题型" ext-class="">
+              <radio-group bindchange="radioChange">
+                <label class="radio">
+                  <radio value="r1" checked="true" />选择题
+                </label>
+                <label class="radio">
+                  <radio value="r2" />是非题
+                </label>
+              </radio-group>
+            </mp-cell>
+          </label>
+          <label>
+            <mp-cell prop="label" title="分值" ext-class="">
+              <input name="score" type="digit" class="weui-input" placeholder="" />
+            </mp-cell>
+          </label>
+        </mp-cells>
+
+        <view class="btn-area" style="margin-top: 16px;">
+          <button class="weui-btn" type="primary" formType="submit">确定</button>
+        </view>
+      </form>
+    </mp-form>
+  </view>
+</page-container>

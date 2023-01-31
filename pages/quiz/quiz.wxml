@@ -5,16 +5,19 @@
     <view style="font-size: 12px;">平均分：100 最高分：120 最低：10</view>
     </view>
 
-    <view style="display: flex; ">
+    <view style="display: flex; justify-content: space-between; ">
+      <view style="display: flex;">
+        <view bindtap="onTapForm" class="text-button">导出成绩</view>
+        <view bindtap="onTapReport" class="text-button">查看报告</view>
+      </view>
       <view bindtap="onTapForm" class="text-button">设置题目</view>
-      <view bindtap="onTapReport" class="text-button">查看报告</view>
     </view>
   </view>
 
   <view class="list">
     <mp-cells ext-class="my-cells" title="">
-      <block wx:for="{{sheets}}" wx:key="id">
-        <mp-cell  footer="{{item.score}}" link>
+      <block wx:for="{{answers}}" wx:key="id">
+        <mp-cell bindtap="onTapAnswer" data-index="{{index}}" footer="{{item.score}}" link>
           <view style="font-size: 15px;">{{item.name}} ({{item.num}})</view>
         </mp-cell>
       </block>

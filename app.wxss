@@ -1,4 +1,6 @@
 /**app.wxss**/
+@import "/styles/common.wxss";
+
 .container {
   height: 100%;
   width: 100%;
@@ -8,3 +10,34 @@
   justify-content: space-between;
   box-sizing: border-box;
 } 
+
+.btn {
+  /* border: none !important; */
+  border-radius: 0rpx !important;
+  /* width: auto; */
+  color: unset !important ;
+  background-color: transparent;
+
+  width: 44px !important;
+  height: 30px;
+}
+
+button {
+  /* width: 44px; */
+}
+
+.btn::after{
+}
+
+.btn:active {
+  /* background-color: #f8f8f8; */
+  opacity: 0.5;
+}
+
+.fab {
+  position: fixed;
+  right: 16px;
+  bottom: 32px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+}
+
