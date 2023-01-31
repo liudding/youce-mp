@@ -3,14 +3,17 @@ page {
 }
 
 .header {
-  height: 90px;
+  /* height: 50px; */
   width: 100vw;
   background-color: white;
+  padding: 0px 8px 4px 8px;
+  box-sizing: border-box;
+  display: flex;flex-direction: column; justify-content: space-between;
 }
 
 .list {
   width: 100vw;
-  margin-top: 20px;
+  /* margin-top: 8px;          */
 }
 .sheet {
   width: 100%;

@@ -28,6 +28,25 @@ Page({
     })
   },
 
+  onTapExport() {
+    let content = "";
+    for (const answer of this.data.answers) {
+      content += [answer.name, answer.num, answer.score].join(",")
+    }
+
+    const fs = wx.getFileSystemManager()
+    fs.writeFile({
+      filePath: `${wx.env.USER_DATA_PATH}/hello.csv`,
+      data: content,
+      success: (res) => {
+        console.log(res)
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+  },
+
   onTapForm() {
     wx.navigateTo({
       url: '/pages/form/form',

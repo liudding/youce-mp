@@ -16,13 +16,12 @@ Page({
         label: "1.",
         score: 2
       },
-      answers: [{ label: "A", count: 20}, { label: "A", count: 20}, { label: "A", count: 20}, { label: "A", count: 20}]
-    }]
+      answers: [{ label: "A", count: 20}, { label: "B", count: 20}, { label: "C", count: 20}, { label: "D", count: 20}, { label: "E", count: 20}, { label: "F", count: 20}]
+    }],
+
+    sort: 'seq' // correct-rate
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad(options) {
 
   },
@@ -31,6 +30,13 @@ Page({
     const ai = e.currentTarget.dataset.answerindex
 
     const question = this.data.stats[qi]
+  },
+
+  onTapSort() {
+
+    this.setData({
+      sort: this.data.sort === "seq" ? "correct-rate" : "seq"
+    })
   },
 
   onShareAppMessage() {
