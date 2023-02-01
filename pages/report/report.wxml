@@ -8,9 +8,9 @@
         </view>
       </view>
 
-      <view class="answers">
-        <block wx:for="{{item.answers}}" wx:for-item="answer" wx:for-index="idx">
-          <view bindtap="onTapAnswer" data-questionIndex="{{index}}" data-answerIndex="{{idx}}" class="answer">{{answer.label}}. {{answer.count}}人</view>
+      <view class="choices">
+        <block wx:for="{{item.choices}}" wx:for-item="choice" wx:for-index="idx">
+          <view bindtap="onTapChoice" data-questionIndex="{{index}}" data-choiceindex="{{idx}}" class="chioce">{{choice.label}}. {{choice.count}}人</view>
         </block>
       </view>
     </view>
@@ -26,3 +26,24 @@
     <view bindtap="onTapSort" style="font-size: 14px; color: blue;">按{{ sort == "seq" ? "题号" : "正确率"}}排序</view>
   </view>
 </view>
+
+
+<page-container show="{{showPopup}}" round="{{round}}" overlay position="bottom" close-on-slide-down>
+  <view class="popup">
+    <headbar title="XXX">
+      <view slot="right">
+        <view>xx</view>
+      </view>
+    </headbar>
+
+    <view class="answer-list">
+      <mp-cells ext-class="my-cells" title="人数：{{answers.length}}">
+      <block wx:for="{{answers}}" wx:key="id">
+        <mp-cell bindtap="onTapStudent" data-index="{{index}}" footer="{{item.score}}" link>
+          <view style="font-size: 15px;">{{item.student.name}} ({{item.student.num}})</view>
+        </mp-cell>
+      </block>
+    </mp-cells>
+    </view>
+  </view>
+</page-container>

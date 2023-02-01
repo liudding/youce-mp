@@ -1,0 +1,18 @@
+.bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0; 
+  position: relative;
+}
+
+.title {
+
+}
+
+.left,
+.right {
+  display: flex;
+  width: 250rpx;
+}
+

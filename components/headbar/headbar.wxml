@@ -1,0 +1,16 @@
+<view class="bar">
+  <view class="left">
+    <slot name="left"></slot>
+  </view>
+
+  <block wx:if="{{title}}">
+    <view>{{title}}</view>
+  </block>
+  <block wx:else>
+    <slot name="center"></slot>
+  </block>
+
+  <view class="right">
+    <slot name="right"></slot>
+  </view>
+</view>

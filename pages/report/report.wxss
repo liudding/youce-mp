@@ -14,13 +14,13 @@ page {
   margin-top: 8px;
 }
 
-.answers {
+.choices {
   display: flex;
   margin-top: 8px;
   flex-wrap:wrap;
 }
 
-.answer {
+.chioce {
   width: 53px;
   font-size: 15px;
   padding: 0px 8px;
@@ -44,4 +44,21 @@ page {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.popup {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
+  /* justify-content: center; */
+}
+
+.answer-list {
+  width: 100%;
 }
