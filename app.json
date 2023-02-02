@@ -2,11 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/scanner/index",
-    "pages/me/index",
     "pages/quiz/quiz",
     "pages/report/report",
     "pages/sheet/sheet",
-    "pages/answer/answer"
+    "pages/result/result"
   ],
   "subpackages": [
     {
