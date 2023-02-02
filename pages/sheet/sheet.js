@@ -7,27 +7,49 @@ Page({
   data: {
     questions: [{
       label: "1",
-      bubbles: [0, 1, 0,0,0],
+      bubbles: "0100",
       score: 1
     }, {
       label: "2",
-      bubbles: [0, 0, 1,0,0],
+      bubbles: "1000",
       score: 1
     }, {
       label: "3",
-      bubbles: [0, 1, 0,0,0],
+      bubbles: "0011",
       score: 1
-    }]
-  },
+    }],
 
+    showPopup: false,
+    form: {}
+  },
 
   onLoad(options) {
 
   },
 
+  onTapBubble(e) {
+    const qindex = e.currentTarget.dataset.questionindex
+    const question = this.data.questions[qindex]
+    const bindex = e.currentTarget.dataset.bubbleindex;
+    const bubble = +question.bubbles[bindex]
+    
+    question.bubbles = question.bubbles.substring(0, bindex) + (!bubble) + question.bubbles.substring(bindex + 1)
+    
+    this.setData({
+      [`questions[${qindex}].bubbles`]: question.bubbles
+    })
+  },
   onTapLabel(e) {
     const question = this.data.questions[e.currentTarget.dataset.index]
     
+    this.setData({
+      showPopup: true,
+      form: {
+        label: question.label,
+        type: question.type,
+        score: question.score
+      }
+    })
   },
 
   onTapScore(e) {

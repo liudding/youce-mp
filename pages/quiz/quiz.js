@@ -59,9 +59,9 @@ Page({
     })
   },
 
-  onTapForm() {
+  onTapSheet() {
     wx.navigateTo({
-      url: '/pages/form/form',
+      url: '/pages/sheet/sheet',
     })
   },
 

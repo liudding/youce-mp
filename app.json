@@ -5,9 +5,24 @@
     "pages/me/index",
     "pages/quiz/quiz",
     "pages/report/report",
-    "pages/form/form",
+    "pages/sheet/sheet",
     "pages/answer/answer"
   ],
+  "subpackages": [
+    {
+      "root": "modules/pack-a",
+      "pages": [
+        "pages/me/me",
+        "pages/help/help"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": []
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -18,5 +33,6 @@
   "useExtendedLib": {
     "weui": true
   },
+  "lazyCodeLoading": "requiredComponents",
   "sitemapLocation": "sitemap.json"
 }

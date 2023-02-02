@@ -8,8 +8,8 @@
       <view bindlongpress="onLongPressQuestion" data-index="{{index}}" class="question">
         <view bindtap="onTapLabel" data-index="{{index}}" class="label">{{item.label}}.</view>
         <view class="flex flex-1">
-          <block wx:for="{{item.bubbles}}" wx:for-item="bubble">
-            <view class="bubble {{ bubble == 1 ? 'picked' : ''}}"></view>
+          <block wx:for="{{item.bubbles}}" wx:for-item="bubble" wx:for-index="idx">
+            <view catchtap="onTapBubble" data-questionindex="{{index}}" data-bubbleindex="{{idx}}" class="bubble {{ bubble == 1 ? 'picked' : ''}}"></view>
           </block>
         </view>
         <view catchtap="onTapScore" data-index="{{index}}">{{item.score}} <text style="font-size: 12px;color: gray">分</text></view>
@@ -27,10 +27,9 @@
     <button size="mini" class="btn">settings</button>
     <button bindtap="onTapAdd" class="btn" size="mini">+</button>
   </view>
-
 </view>
 
-<page-container show="{{true}}" round="{{round}}" overlay position="bottom" close-on-slide-down>
+<page-container show="{{showPopup}}" round="{{round}}" overlay position="bottom" close-on-slide-down>
   <view class="edit-popup">
     <view style="padding: 8px 0; margin-bottom: 8px; position: relative;">
       <view style="margin: 0 auto;">编辑题目</view>
@@ -59,7 +58,7 @@
           </label>
           <label>
             <mp-cell prop="label" title="分值" ext-class="">
-              <input name="score" type="digit" class="weui-input" placeholder="" />
+              <input name="score" value="{{form.score}}" type="digit" class="weui-input" placeholder="" />
             </mp-cell>
           </label>
         </mp-cells>

@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="header">
+    <image bindtap="onTapLogo" src="../../../../images/logo.png" class="logo"></image>
+    <text class="intro" style="text-align: center;">
+      一款简单好用且免费的提词器
+      支持手机、平板、电脑等多端使用
+    </text>
+  </view>
+  <view class="more">
+    <!-- <mp-cell bindtap="onTapFeedback" title="使用帮助" footer="" link hover>
+      <view slot="icon" class="iconfont icon-star icon"></view>
+    </mp-cell> -->
+    <mp-cell title="分享转发" footer="分享给好友" link hover>
+      <view slot="icon" class="iconfont icon-share icon"></view>
+      <button open-type="share" class="c-btn feedback"></button>
+    </mp-cell>
+    <mp-cell catchtap="onTapPin" title="添加收藏" footer="下次访问更方便" link hover>
+      <view slot="icon" class="iconfont icon-star icon"></view>
+    </mp-cell>
+    <mp-cell title="联系客服" link hover>
+      <view slot="icon" class="iconfont icon-life-buoy icon"></view>
+      <button open-type="contact" class="c-btn feedback"></button>
+    </mp-cell>
+    <mp-cell catchtap="onTapFeedback"  title="意见反馈" footer="欢迎提出建议" link hover>
+      <view slot="icon" class="iconfont icon-smile icon"></view>
+      <!-- <button open-type="feedback" class="c-btn feedback"></button> -->
+    </mp-cell>
+
+    <view style="color: gray; font-size: 12px; margin: 16px 0 8px 16px;">更多小程序</view>
+
+    <view class="d-flex my-mini-apps">
+      <view wx:for="{{apps}}" wx:key="index" class="mini-app" catchtap="onTapApp" data-index="{{index}}">
+        <image slot="icon" src="{{item.logo}}" mode="aspectFill" class=" mini-app-logo"></image>
+        <view class="mini-app-name">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+
+  <ad unit-id="adunit-48bc7d846689f851" style="margin-top: 32px;"></ad>
+
+  <view class="footer">倾心打造 by ding</view>
+</view>
+
+<pin-prompt show="{{showPinPrompt}}" type="card" name="提词器" logo="../../images/logo.png"></pin-prompt>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "pin-prompt": "/miniprogram_npm/wx-pin-prompt/pin-prompt"
+  },
+  "navigationBarTitleText": "",
+  "navigationStyle": "default"
+}
