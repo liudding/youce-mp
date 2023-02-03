@@ -1,11 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/scanner/index",
+    "pages/index/index",
     "pages/quiz/quiz",
-    "pages/report/report",
-    "pages/sheet/sheet",
-    "pages/result/result"
+    "pages/sheet/sheet"
   ],
   "subpackages": [
     {
@@ -18,7 +16,8 @@
     {
       "root": "modules/pack-b",
       "pages": [
-        "pages/result/result"
+        "pages/result/result",
+        "pages/report/report"
       ]
     }
   ],
