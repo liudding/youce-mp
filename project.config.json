@@ -32,7 +32,8 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "ignoreUploadUnusedFiles": true,
+    "ignoreDevUnusedFiles": false,
+    "ignoreUploadUnusedFiles": false,
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "useApiHook": true,
@@ -53,7 +54,16 @@
     "tabSize": 2
   },
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      {
+        "value": "assets/opencv.1",
+        "type": "file"
+      },
+      {
+        "value": "assets/opencv.1.wasm.br",
+        "type": "file"
+      }
+    ],
     "include": []
   },
   "appid": "wx7160e6cc935d2b12",

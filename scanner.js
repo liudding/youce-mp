@@ -1,6 +1,6 @@
-global.wasm_url = '/assets/opencv3.4.16.wasm.br'
-// opencv_exec.js会从global.wasm_url获取wasm路径
-const cv = require('./assets/opencv_exec.js');
+// global.wasm_url = '/assets/opencv.4.7.wasm.br'
+// // opencv_exec.js会从global.wasm_url获取wasm路径
+// const cv = require('./assets/opencv_exec.js');
 
 const COLOR_RED = [255, 0, 0, 255];
 const COLOR_BLUE = [0, 0, 255, 255];
@@ -12,6 +12,7 @@ const form = {
 
 async function getRect(frame) {
   const src = matFromFrame(frame)
+  // console.log(src)
   // const size = src.size();
   // const processWidth = 500;
   // if (size.width > processWidth) {
@@ -138,6 +139,7 @@ async function getRect(frame) {
 }
 
 function matFromFrame(frame) {
+  return cv.imread(frame);
   return cv.matFromImageData({
     data: new Uint8ClampedArray(frame.data),
     width: frame.width,
